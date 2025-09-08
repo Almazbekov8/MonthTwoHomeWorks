@@ -15,3 +15,10 @@ class Classmate(Person):
         print(f"Привет меня зовут {self.name}, я одноклассник Игоря,"
               f"я родился в {self.birth_date}, я {self.occupation},"
               "у меня есть высшее образование" if self.higher_education else "у меня нет высшего образование")
+
+class Friend(Person):
+
+    def introduce(self):
+        print(f"Привет меня зовут {self.name}, я близкий друг Игоря,"
+              f"я родился в {self.birth_date}, я {self.occupation},"
+              "у меня есть высшее образование" if self.higher_education else "у меня нет высшего образование")
