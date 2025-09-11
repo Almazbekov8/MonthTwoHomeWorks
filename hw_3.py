@@ -2,8 +2,8 @@ class Person:
     def __init__(self, name, birth_date, occupation, higher_education):
         self.name = name
         self.birth_date = birth_date
-        self.occupation = occupation
-        self.higher_education = higher_education
+        self.__occupation = occupation
+        self.__higher_education = higher_education
 
     def introduce(self):
         print(f"Привет меня зовут {self.name}, я родился в {self.birth_date}, я {self.occupation},",
