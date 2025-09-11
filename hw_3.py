@@ -5,6 +5,22 @@ class Person:
         self.__occupation = occupation
         self.__higher_education = higher_education
 
+    @property
+    def occupation(self):
+        return self.__occupation
+
+    @property
+    def higher_education(self):
+        return self.__higher_education
+
+    @occupation.setter
+    def occupation(self, occupation):
+        self.__occupation = occupation
+
+    @higher_education.setter
+    def higher_education(self, higher_education):
+        self.__higher_education = higher_education
+
     def introduce(self):
         print(f"Привет меня зовут {self.name}, я родился в {self.birth_date}, я {self.occupation},",
               "у меня есть высшее образование" if self.higher_education else "у меня нет высшего образование" )
