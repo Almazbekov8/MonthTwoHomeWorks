@@ -12,3 +12,9 @@ class Car(Vehicle):
 class ElectricCar(Vehicle):
     def start(self):
         super().start()
+
+
+class Tesla(ElectricCar):
+    def start(self):
+        super().start()
+        print("Tesla ready")
