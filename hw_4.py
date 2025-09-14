@@ -18,3 +18,7 @@ class Tesla(ElectricCar):
     def start(self):
         super().start()
         print("Tesla ready")
+
+
+tesla1 = Tesla()
+tesla1.start()
