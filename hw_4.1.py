@@ -13,3 +13,16 @@ class LoggingMixin(ViewBase):
         print("Log start")
         super().render()
         print("Log end")
+
+class AuthRequiredMixin(ViewBase):
+    def __init__(self, auth = True):
+        self.auth = auth
+        super().__init__()
+
+    def render(self):
+        if self.auth:
+            print("Auth OK\n"
+                  "Template render")
+        else:
+            print("Access denied")
+        super().render()
