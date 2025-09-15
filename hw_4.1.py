@@ -1,33 +1,31 @@
-
-
-class BaseView(ViewBase):
+class BaseView:
     def render(self):
-        print("Admin page render start")
-        super().render()
-        print("Admin page render end")
+        print("Template render")
 
-class LoggingMixin(ViewBase):
+class LoggingMixin(BaseView):
     def render(self):
         print("Log start")
         super().render()
         print("Log end")
 
-class AuthRequiredMixin(ViewBase):
+class AuthRequiredMixin(BaseView):
     def __init__(self, auth = True):
         self.auth = auth
         super().__init__()
 
     def render(self):
         if self.auth:
-            print("Auth OK\n"
-                  "Template render")
+            print("Auth OK")
+            super().render()
+
         else:
             print("Access denied")
-        super().render()
 
-class AdminPageView(BaseView, LoggingMixin, AuthRequiredMixin):
+class AdminPageView(LoggingMixin, AuthRequiredMixin , BaseView):
     def render(self):
+        print("Admin page render")
         super().render()
+        print("Admin page end")
 
 admin1 = AdminPageView()
 admin1.render()
