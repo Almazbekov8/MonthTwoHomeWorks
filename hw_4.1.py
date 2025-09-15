@@ -26,3 +26,10 @@ class AuthRequiredMixin(ViewBase):
         else:
             print("Access denied")
         super().render()
+
+class AdminPageView(BaseView, LoggingMixin, AuthRequiredMixin):
+    def render(self):
+        super().render()
+
+admin1 = AdminPageView()
+admin1.render()
