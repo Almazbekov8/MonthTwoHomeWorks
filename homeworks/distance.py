@@ -7,3 +7,6 @@ class Distance:
 
     def __str__(self):
         return f"{self.value} {self.unit}"
+
+    def to_meters(self):
+        return self.value * self.units[self.unit]
