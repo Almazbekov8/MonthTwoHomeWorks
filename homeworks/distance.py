@@ -38,3 +38,7 @@ class Distance:
 
     def __ge__(self, other):
         return self.to_meters() >= other.to_meters()
+
+    def convert(self, new_unit):
+        meters = self.to_meters()
+        return Distance(meters / self.units[new_unit], new_unit)
