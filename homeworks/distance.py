@@ -22,3 +22,19 @@ class Distance:
         if result < 0:
             return "Значение не может быть отрицательным"
         return Distance(result / self.units[self.unit], self.unit)
+
+
+    def __eq__(self, other):
+        return self.to_meters() == other.to_meters()
+
+    def __lt__(self, other):
+        return self.to_meters() < other.to_meters()
+
+    def __le__(self, other):
+        return self.to_meters() <= other.to_meters()
+
+    def __gt__(self, other):
+        return self.to_meters() > other.to_meters()
+
+    def __ge__(self, other):
+        return self.to_meters() >= other.to_meters()
