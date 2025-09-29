@@ -9,3 +9,6 @@ def printer_time(func):
         return result
     return wrapper
 
+@printer_time
+def print_hello_world():
+    print("Hello World!")
